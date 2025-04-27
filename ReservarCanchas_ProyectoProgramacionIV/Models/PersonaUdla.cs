@@ -15,6 +15,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
         [MaxLength(100)]
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public string TipoPersona { get; set; } // Estudiante, Administrador, Personal de Mantenimiento
+        [MaxLength(50)]
+        public string TipoPersona { get; set; } //Aqui deberian estar tres tipos de persona: Estudiante, Administrador, Personal de Mantenimiento
     }
 }

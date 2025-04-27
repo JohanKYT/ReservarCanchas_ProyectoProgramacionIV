@@ -1,0 +1,21 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace ReservarCanchas_ProyectoProgramacionIV.Models
+{
+    public class Calendario
+    {
+        [Key]
+        public int CalendarioId { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        [MaxLength(50)]
+        public string Estado { get; set; } 
+        [MaxLength(500)]
+        public string NotasDetallada { get; set; }
+        public int CanchaId { get; set; }
+        [ForeignKey("CanchaId")]
+        public Cancha Cancha { get; set; }
+    }
+
+}
