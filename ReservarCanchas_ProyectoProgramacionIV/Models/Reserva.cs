@@ -14,9 +14,9 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
         public ICollection<Calendario> Calendarios { get; set; } = new List<Calendario>();
         public int CanchaId { get; set; }
         [ForeignKey("CanchaId")]
-        public Cancha? Cancha { get; set; }
+        public Cancha Cancha { get; set; }
         public int PersonaUdlaId { get; set; }
         [ForeignKey("PersonaUdlaId")]
-        public PersonaUdla? PersonaUdla { get; set; }
+        public PersonaUdla PersonaUdla { get; set; }
     }
 }

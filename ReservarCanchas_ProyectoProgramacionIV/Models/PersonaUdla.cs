@@ -17,19 +17,5 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
         public DateTime FechaNacimiento { get; set; }
         [MaxLength(50)]
         public string TipoPersona { get; set; }
-        protected PersonaUdla()
-        {
-            TipoPersona = ObtenerTipoPersona();
-        }
-        private string ObtenerTipoPersona()
-        {
-            return GetType().Name switch
-            {
-                "Administrador" => "Administrador",
-                "Estudiante" => "Estudiante",
-                "PersonalMantenimiento" => "Personal de Mantenimiento",
-                _ => "Desconocido" //Esta linea es para controlar que si se escribe un tipo de persona que no existe, no rompa el programa
-            };
-        }
     }
 }
