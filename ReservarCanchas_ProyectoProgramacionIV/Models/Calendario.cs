@@ -10,12 +10,12 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         [MaxLength(50)]
-        public string Estado { get; set; } 
+        public string Estado { get; set; } = string.Empty;
         [MaxLength(500)]
-        public string NotasDetallada { get; set; }
+        public string NotasDetallada { get; set; } = string.Empty;
         public int CanchaId { get; set; }
         [ForeignKey("CanchaId")]
-        public Cancha Cancha { get; set; }
+        public Cancha? Cancha { get; set; }
     }
 
 }

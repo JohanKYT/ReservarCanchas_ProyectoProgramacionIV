@@ -2,7 +2,7 @@
 
 namespace ReservarCanchas_ProyectoProgramacionIV.Models
 {
-    public class PersonaUdla
+    public abstract class PersonaUdla
     {
         [Key]
         public int BannerId { get; set; }
@@ -16,6 +16,20 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
         [MaxLength(50)]
-        public string TipoPersona { get; set; } //Aqui deberian estar tres tipos de persona: Estudiante, Administrador, Personal de Mantenimiento
+        public string TipoPersona { get; set; }
+        protected PersonaUdla()
+        {
+            TipoPersona = ObtenerTipoPersona();
+        }
+        private string ObtenerTipoPersona()
+        {
+            return GetType().Name switch
+            {
+                "Administrador" => "Administrador",
+                "Estudiante" => "Estudiante",
+                "PersonalMantenimiento" => "Personal de Mantenimiento",
+                _ => "Desconocido" //Esta linea es para controlar que si se escribe un tipo de persona que no existe, no rompa el programa
+            };
+        }
     }
 }

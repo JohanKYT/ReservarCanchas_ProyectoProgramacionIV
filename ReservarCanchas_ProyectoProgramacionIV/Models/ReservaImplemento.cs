@@ -7,12 +7,12 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Models
     {
         [Key]
         public int Id { get; set; }
+        public int CantidadSolicitada { get; set; }
         public int ReservaId { get; set; }
         [ForeignKey("ReservaId")]
-        public Reserva Reserva { get; set; }
+        public Reserva? Reserva { get; set; }
         public int ImplementoId { get; set; }
         [ForeignKey("ImplementoId")]
-        public Implemento Implemento { get; set; }
-        public int CantidadSolicitada { get; set; }
+        public Implemento? Implemento { get; set; }
     }
 }
