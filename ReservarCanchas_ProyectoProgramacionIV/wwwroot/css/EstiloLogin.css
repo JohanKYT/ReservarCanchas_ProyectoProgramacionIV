@@ -1,26 +1,4 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-/* Estilos para el contenedor principal */
+ï»¿/* Estilos para el contenedor principal */
 .background-container {
     position: relative;
     height: 100vh;
@@ -53,12 +31,12 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Botón de login (ubicado en la esquina superior derecha) */
+/* BotÃ³n de login (ubicado en la esquina superior derecha) */
 #loginButton {
     position: absolute;
     top: 20px; /* A 20px del borde superior */
     right: 20px; /* A 20px del borde derecho */
-    z-index: 10; /* Asegura que esté por encima del contenido */
+    z-index: 10; /* Asegura que estÃ© por encima del contenido */
 }
 
 /* Estilos para el texto */

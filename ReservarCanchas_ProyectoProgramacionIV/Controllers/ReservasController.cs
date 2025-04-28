@@ -49,7 +49,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         public IActionResult Create()
         {
             ViewData["CanchaId"] = new SelectList(_context.Cancha, "CanchaId", "CanchaId");
-            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "TipoPersona");
+            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "Nombre");
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CanchaId"] = new SelectList(_context.Cancha, "CanchaId", "CanchaId", reserva.CanchaId);
-            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "TipoPersona", reserva.PersonaUdlaId);
+            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "Nombre", reserva.PersonaUdlaId);
             return View(reserva);
         }
 
@@ -85,7 +85,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 return NotFound();
             }
             ViewData["CanchaId"] = new SelectList(_context.Cancha, "CanchaId", "CanchaId", reserva.CanchaId);
-            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "TipoPersona", reserva.PersonaUdlaId);
+            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "Nombre", reserva.PersonaUdlaId);
             return View(reserva);
         }
 
@@ -122,7 +122,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CanchaId"] = new SelectList(_context.Cancha, "CanchaId", "CanchaId", reserva.CanchaId);
-            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "TipoPersona", reserva.PersonaUdlaId);
+            ViewData["PersonaUdlaId"] = new SelectList(_context.Set<PersonaUdla>(), "BannerId", "Nombre", reserva.PersonaUdlaId);
             return View(reserva);
         }
 

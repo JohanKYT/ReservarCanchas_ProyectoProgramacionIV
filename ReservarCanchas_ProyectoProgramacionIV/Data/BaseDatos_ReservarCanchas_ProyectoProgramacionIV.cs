@@ -13,6 +13,27 @@ public class BaseDatos_ReservarCanchas_ProyectoProgramacionIV : DbContext
     }
 
     public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Campus> Campus { get; set; } = default!;
+
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.ReservaImplemento> ReservaImplemento { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Administrador> Administrador { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Calendario> Calendario { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Cancha> Cancha { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Carrera> Carrera { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Estudiante> Estudiante { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Facultad> Facultad { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Implemento> Implemento { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.PersonalMantenimiento> PersonalMantenimiento { get; set; } = default!;
+
+    public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Reserva> Reserva { get; set; } = default!;
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -29,24 +50,4 @@ public class BaseDatos_ReservarCanchas_ProyectoProgramacionIV : DbContext
 
         modelBuilder.Entity<Reserva>().ToTable("Reservas");
     }
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.ReservaImplemento> ReservaImplemento { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Administrador> Administrador { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Calendario> Calendario { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Cancha> Cancha { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Carrera> Carrera { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Estudiante> Estudiante { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Facultad> Facultad { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Implemento> Implemento { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.PersonalMantenimiento> PersonalMantenimiento { get; set; } = default!;
-
-public DbSet<ReservarCanchas_ProyectoProgramacionIV.Models.Reserva> Reserva { get; set; } = default!;
 }

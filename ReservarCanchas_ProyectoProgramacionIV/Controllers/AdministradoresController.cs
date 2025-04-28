@@ -47,7 +47,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // GET: Administradores/Create
         public IActionResult Create()
         {
-            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Id");
+            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Nombre");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FacultadId,BannerId,Nombre,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] Administrador administrador)
+        public async Task<IActionResult> Create([Bind("FacultadId,BannerId,Nombre,Correo,Password,Telefono,Direccion,FechaNacimiento,TipoPersona")] Administrador administrador)
         {
             if (ModelState.IsValid)
             {
@@ -64,24 +64,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Id", administrador.FacultadId);
-            return View(administrador);
-        }
-
-        // GET: Administradores/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var administrador = await _context.Administrador.FindAsync(id);
-            if (administrador == null)
-            {
-                return NotFound();
-            }
-            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Id", administrador.FacultadId);
+            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Nombre", administrador.FacultadId);
             return View(administrador);
         }
 
@@ -90,7 +73,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FacultadId,BannerId,Nombre,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] Administrador administrador)
+        public async Task<IActionResult> Edit(int id, [Bind("FacultadId,BannerId,Nombre,Correo,Password,Telefono,Direccion,FechaNacimiento,TipoPersona")] Administrador administrador)
         {
             if (id != administrador.BannerId)
             {
@@ -117,7 +100,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Id", administrador.FacultadId);
+            ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Nombre", administrador.FacultadId);
             return View(administrador);
         }
 

@@ -47,7 +47,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // GET: Estudiantes/Create
         public IActionResult Create()
         {
-            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Id");
+            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Nombre");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarreraId,BannerId,Nombre,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] Estudiante estudiante)
+        public async Task<IActionResult> Create([Bind("CarreraId,BannerId,Nombre,Password,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] Estudiante estudiante)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Id", estudiante.CarreraId);
+            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Nombre", estudiante.CarreraId);
             return View(estudiante);
         }
 
@@ -81,7 +81,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
             {
                 return NotFound();
             }
-            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Id", estudiante.CarreraId);
+            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Nombre", estudiante.CarreraId);
             return View(estudiante);
         }
 
@@ -117,7 +117,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Id", estudiante.CarreraId);
+            ViewData["CarreraId"] = new SelectList(_context.Carrera, "Id", "Nombre", estudiante.CarreraId);
             return View(estudiante);
         }
 

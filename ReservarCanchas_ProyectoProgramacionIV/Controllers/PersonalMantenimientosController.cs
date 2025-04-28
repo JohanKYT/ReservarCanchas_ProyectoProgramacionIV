@@ -53,7 +53,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BannerId,Nombre,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] PersonalMantenimiento personalMantenimiento)
+        public async Task<IActionResult> Create([Bind("BannerId,Nombre,Correo,Password,Telefono,Direccion,FechaNacimiento,TipoPersona")] PersonalMantenimiento personalMantenimiento)
         {
             if (ModelState.IsValid)
             {

@@ -4,6 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BaseDatos_ReservarCanchas_ProyectoProgramacionIV>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BaseDatos_ReservarCanchas_ProyectoProgramacionIV") ?? throw new InvalidOperationException("Connection string 'BaseDatos_ReservarCanchas_ProyectoProgramacionIV' not found.")));
 
+builder.Services.AddDbContext<BaseDatos_ReservarCanchas_ProyectoProgramacionIV>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
