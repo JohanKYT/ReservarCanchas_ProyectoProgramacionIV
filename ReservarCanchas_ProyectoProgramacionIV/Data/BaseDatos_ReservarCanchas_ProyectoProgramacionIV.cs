@@ -44,7 +44,6 @@ public class BaseDatos_ReservarCanchas_ProyectoProgramacionIV : DbContext
             .HasValue<Estudiante>("Estudiante")
             .HasValue<Administrador>("Administrador")
             .HasValue<PersonalMantenimiento>("PersonalMantenimiento");
-
         // Puedes seguir añadiendo nuevas subclases sin modificar el código aquí
         // y EF se encargará de asignar el tipo correspondiente automáticamente.
 

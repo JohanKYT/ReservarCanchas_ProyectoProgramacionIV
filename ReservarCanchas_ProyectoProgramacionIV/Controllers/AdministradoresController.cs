@@ -62,16 +62,32 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
             {
                 _context.Add(administrador);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Administrador creado correctamente c:";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["FacultadId"] = new SelectList(_context.Set<Facultad>(), "Id", "Nombre", administrador.FacultadId);
             return View(administrador);
         }
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        // POST: Administradores/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+            var administrador = await _context.Administrador.FindAsync(id);
+            if (administrador == null)
+            {
+                return NotFound();
+            }
+            ViewData["FacultadId"] = new SelectList(_context.Facultad, "Id", "Nombre", administrador.FacultadId);
+            return View(administrador);
+        }
+
+            // POST: Administradores/Edit/5
+            // To protect from overposting attacks, enable the specific properties you want to bind to.
+            // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FacultadId,BannerId,Nombre,Correo,Password,Telefono,Direccion,FechaNacimiento,TipoPersona")] Administrador administrador)
         {

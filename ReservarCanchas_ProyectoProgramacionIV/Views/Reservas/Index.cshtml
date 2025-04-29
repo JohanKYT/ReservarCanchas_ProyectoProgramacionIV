@@ -1,53 +1,61 @@
 ﻿@model IEnumerable<ReservarCanchas_ProyectoProgramacionIV.Models.Reserva>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
+<p>
+	<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+		<i></i> Pantalla Principal
+	</a>
+</p>
 
-<h1>Index</h1>
+<h1>Reserva tu cancha</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-primary">
+		<i class="bi bi-plus-circle"></i> Nueva Reserva
+	</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaInicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaFin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cancha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonaUdla)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaFin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cancha.CanchaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonaUdla.TipoPersona)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ReservaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReservaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReservaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.FechaInicio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.FechaFin)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Cancha)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PersonaUdla)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.FechaInicio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FechaFin)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cancha.CanchaId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.PersonaUdla.TipoPersona)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ReservaId"> <i class="bi bi-pencil-square"></i> Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.ReservaId"> <i class="bi bi-eye"></i> Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.ReservaId"> <i class="bi bi-trash"></i> Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

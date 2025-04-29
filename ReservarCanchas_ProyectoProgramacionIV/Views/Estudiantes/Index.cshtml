@@ -1,71 +1,91 @@
 ﻿@model IEnumerable<ReservarCanchas_ProyectoProgramacionIV.Models.Estudiante>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
+<p>
+	<a asp-controller="Administradores" asp-action="Index" class="btn btn-secondary">
+		<i></i> Administradores
+	</a>
+	<a asp-controller="PersonalMantenimientos" asp-action="Index" class="btn btn-secondary">
+		<i></i> Personal de mantenimiento
+	</a>
+	<a asp-controller="Reservas" asp-action="Index" class="btn btn-secondary">
+		<i></i> Reservas
+	</a>
+</p>
 
-<h1>Index</h1>
+<h1>Estudiantes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-primary">
+		<i class="bi bi-plus-circle"></i> Agregar Nuevo Estudiante
+	</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Carrera)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Correo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaNacimiento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoPersona)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Carrera.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Correo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoPersona)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BannerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BannerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BannerId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Carrera)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Correo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Telefono)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Direccion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.FechaNacimiento)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TipoPersona)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Carrera.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Correo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Telefono)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Direccion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FechaNacimiento)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TipoPersona)
+				</td>
+				<td>
+					<a asp-action="Edit" class="btn btn-outline-warning" asp-route-id="@item.BannerId">
+						<i class="bi bi-pencil-square"></i> Edit
+					</a> |
+					<a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.BannerId">
+						<i class="bi bi-eye"></i> Details
+					</a> |
+					<a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.BannerId">
+						<i class="bi bi-trash"></i> Delete
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

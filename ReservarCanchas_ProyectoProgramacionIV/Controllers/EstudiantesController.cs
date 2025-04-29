@@ -90,7 +90,7 @@ namespace ReservarCanchas_ProyectoProgramacionIV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CarreraId,BannerId,Nombre,Correo,Telefono,Direccion,FechaNacimiento,TipoPersona")] Estudiante estudiante)
+        public async Task<IActionResult> Edit(int id, [Bind("CarreraId,BannerId,Nombre,Correo,Password,Telefono,Direccion,FechaNacimiento,TipoPersona")] Estudiante estudiante)
         {
             if (id != estudiante.BannerId)
             {
