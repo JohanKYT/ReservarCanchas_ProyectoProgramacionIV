@@ -66,3 +66,9 @@ body {
     text-align: center;
     color: white;
 }
+
+footer {
+    background-color: #8d002e; /* Rojo potente para el footer */
+    color: white; /* Asegura que el texto sea blanco para contraste */
+    text-align: center; /* Centra el texto */
+}
